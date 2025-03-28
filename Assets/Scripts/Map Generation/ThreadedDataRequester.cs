@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.Threading;
@@ -10,7 +9,7 @@ public class ThreadedDataRequester : MonoBehaviour {
 	Queue<ThreadInfo> dataQueue = new Queue<ThreadInfo>();
 
 	void Awake() {
-		instance = FindObjectOfType<ThreadedDataRequester> ();
+		instance = FindFirstObjectByType<ThreadedDataRequester> ();
 	}
 
 	public static void RequestData(Func<object> generateData, Action<object> callback) {
